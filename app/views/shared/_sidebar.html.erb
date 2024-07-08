@@ -1,0 +1,122 @@
+<div class="flex-shrink-0 p-3 bg-white">
+    <div class="d-flex">
+       <div class="d-flex align-items-center">
+            <%= render partial:"shared/profile_circle", locals: { user: current_user, circle: "circle3" }%>
+            <span class="nickname3"><%= format_nick_name(current_user) %></span>
+        </div>
+    </div>
+    
+    <hr/>
+    
+    <ul class="list-unstyled ps-0">
+        <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+                <i class="bi bi-book-half"></i>
+                <%= t("sidebar.my_articles")%>
+            </button>
+
+            <div class="collapse" id="home-collapse" style="">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li class="sidebar-item">
+                    <i class="bi bi-book-half"></i>
+                    <%= link_to t("sidebar.my_articles"), "/#{current_user.nick_name}", class:"link-dark rounded" %>
+                </li>
+
+                <li class="sidebar-item">
+                    <i class="bi bi-book-fill text-secondary"></i>
+                    <%= link_to t("sidebar.my_draft_articles"), my_draft_articles_profile_index_path, class:"link-dark rounded" %>
+                </li>
+                
+                <li class="sidebar-item">
+                    <i class="bi bi-book-fill text-success"></i>
+                    <%= link_to t("sidebar.my_published_articles"), my_published_articles_profile_index_path, class:"link-dark rounded" %>
+                </li>
+            </ul>
+            </div>
+        </li>
+
+        <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#my-comments-collapse" aria-expanded="false">
+                <i class="bi bi-box-arrow-right"></i>
+                <%= t("sidebar.my_comments") %>
+            </button>
+            
+            <div class="collapse" id="my-comments-collapse" style="">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li class="sidebar-item">
+                        <i class="bi bi-chat-square"></i>
+                        <%= link_to t("sidebar.my_comments"), my_comments_profile_index_path, class:"link-dark rounded" %>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <i class="bi bi-chat-square-fill text-danger"></i>
+                        <%= link_to t("sidebar.my_rejected_comments"), my_rejected_comments_profile_index_path, class:"link-dark rounded" %>
+                    </li>
+                    
+                    <li class="sidebar-item">
+                        <i class="bi bi-chat-square-fill text-warning"></i>
+                        <%= link_to t("sidebar.my_pending_comments"), my_pending_comments_profile_index_path, class:"link-dark rounded" %>
+                    </li>
+                    
+                    <li class="sidebar-item">
+                        <i class="bi bi-chat-square-fill text-success"></i>
+                        <%= link_to t("sidebar.my_approved_comments"), my_approved_comments_profile_index_path, class:"link-dark rounded" %>
+                    </li>
+                </ul>
+            </div>
+        </li>
+
+        <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#other-comments-collapse" aria-expanded="false">
+                <i class="bi bi-box-arrow-in-left"></i>
+                <%= t("sidebar.comments_on_my_articles") %>
+            </button>
+            
+            <div class="collapse" id="other-comments-collapse" style="">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li class="sidebar-item">
+                        <i class="bi bi-chat-square"></i>
+                        <%= link_to t("sidebar.comments_on_my_articles"),  my_received_comments_profile_index_path, class:"link-dark rounded" %>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <i class="bi bi-chat-square-fill text-danger"></i>
+                        <%= link_to t("sidebar.rejected_comments_on_my_articles"), my_received_rejected_comments_profile_index_path, class:"link-dark rounded" %>
+                    </li>
+                    
+                    <li class="sidebar-item">
+                        <i class="bi bi-chat-square-fill text-warning"></i>
+                        <%= link_to t("sidebar.pending_comments_on_my_articles"), my_received_pending_comments_profile_index_path, class:"link-dark rounded" %>
+                    </li>
+                    
+                    <li class="sidebar-item">
+                        <i class="bi bi-chat-square-fill text-success"></i>
+                        <%= link_to t("sidebar.approved_comments_on_my_articles"), my_received_approved_comments_profile_index_path, class:"link-dark rounded" %>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    
+        <li class="border-top my-3"></li>
+        <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                <i class="bi bi-person-gear"></i>
+                <%= t("sidebar.account") %>
+            </button>
+            
+            <div class="collapse" id="account-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li class="sidebar-item">
+                        <i class="bi bi-gear"></i>
+                        <%= link_to t("sidebar.edit_your_account"), edit_user_registration_path, class: "link-dark rounded" %>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <i class="bi bi-door-open-fill"></i>
+                        <%= link_to t("sidebar.sign_out"), destroy_user_session_path, method: :delete,data: { turbo_method: :delete }, class: "link-dark rounded"%>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>

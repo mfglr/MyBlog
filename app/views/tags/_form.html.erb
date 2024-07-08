@@ -1,0 +1,22 @@
+<%= form_with(model: tag) do |form| %>
+    
+    <% if tag.errors.any? %>
+        <ul class="list-group mb-3">
+            <% tag.errors.each do |error| %>
+                <li class="list-group-item list-group-item-danger"><%= error.full_message %></li>
+            <% end %>
+        </ul>
+    <% end %>
+    
+    <div class="form-group mb-3">
+        <%= form.label :name %>
+        <%= form.text_field :name, class: "form-control" %>
+    </div>
+   
+    <div class="d-flex flex-row-reverse">
+        <div>
+            <%= link_to 'Cancel', :back, class: "btn btn-danger" %>
+            <%= form.submit class: "btn btn-primary" %>
+        </div>
+    </div>
+<% end %>

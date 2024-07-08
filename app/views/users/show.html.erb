@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+       <div class="col-3">
+            <% if @user == current_user %>
+                <%= render partial:"shared/sidebar" %>
+            <% else %>
+                <div class="p-3">
+                    <div class="d-flex align-items-center">
+                        <%= render partial:"shared/profile_circle", locals: { user: @user, circle: "circle3" }%>
+                        <span class="nickname3"><%= format_nick_name(@user) %></span>
+                    </div>
+                    <hr/>
+                    <span><%= t("user_show.number_of_article") %> : </span><%= number_of_published_posts(@user) %>
+                </div>
+            <% end %>
+        </div>
+
+        <div class="col-6">
+            <div class=" d-flex justify-content-center">
+                <h1><%= t("user_show.articles")%></h1>
+            </div>
+
+            <% if @user.articles.any? %>
+                <%= 
+                    render partial: "articles/article_list",
+                    locals: { articles: @articles }
+                %>
+            <% else %>
+                <%= render partial: "articles/no_articles", locals: { user: @user } %>
+            <% end %>
+        </div>
+    </div>
+</div>

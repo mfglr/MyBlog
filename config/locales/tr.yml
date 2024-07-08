@@ -1,0 +1,174 @@
+tr:
+
+  activerecord:
+    errors:
+      models:
+        article:
+          attributes:
+            title:
+              blank: "Makelenin bir başlığı olmalıdır!"
+              too_long: "Başlık en fazla 140 karakter olmalıdır"
+  date:
+    formats:
+      default: "%d %B %Y"
+      short: "%d %b"
+      long: "%d %B %Y, %A"
+    day_names: ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"]
+    abbr_day_names: ["Paz", "Pzt", "Sal", "Çar", "Per", "Cum", "Cmt"]
+    month_names: [nil, "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"]
+    abbr_month_names: [nil, "Oca", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Ağu", "Eyl", "Eki", "Kas", "Ara"]
+  time:
+    formats:
+      default: "%d %B %Y, %A %H:%M"
+      short: "%d %b %H:%M"
+      long: "%d %B %Y, %A %H:%M:%S"
+  datetime:
+    distance_in_words:
+      half_a_minute: "yarım dakika"
+      less_than_x_seconds:
+        one: "1 saniyeden az"
+        other: "%{count} saniyeden az"
+      x_seconds:
+        one: "1 saniye"
+        other: "%{count} saniye"
+      x_minutes:
+        one: "1 dakika"
+        other: "%{count} dakika"
+      about_x_hours:
+        one: "yaklaşık 1 saat"
+        other: "yaklaşık %{count} saat"
+      x_days:
+        one: "1 gün"
+        other: "%{count} gün"
+      about_x_months:
+        one: "yaklaşık 1 ay"
+        other: "yaklaşık %{count} ay"
+      x_months:
+        one: "1 ay"
+        other: "%{count} ay"
+      about_x_years:
+        one: "yaklaşık 1 yıl"
+        other: "yaklaşık %{count} yıl"
+      over_x_years:
+        one: "1 yıldan fazla"
+        other: "%{count} yıldan fazla"
+      almost_x_years:
+        one: "neredeyse 1 yıl"
+        other: "neredeyse %{count} yıl"
+  helpers:
+    submit:
+      create: "Oluştur"
+      update: "Güncelle"
+  
+  header:
+    home: "Ana Sayfa"
+    create_article: "Yeni Makale"
+    sign_in: "Giriş Yap"
+    sign_up: "Üye Ol"
+    sign_out: "Çıkış Yap"
+  
+  search_box:
+    just_search_by_tags: "Sadece etiketlerde ara"
+    search: "Ara"
+  
+  article:
+    empty_content: "İçerik yakında burada olacak!"
+  
+  comment_form:
+    type_comment: "Yorum yaz."
+  
+  comment:
+    pending_comment_message: "Bu yorum yazar tarafından onaylanmayı bekliyor! Sadece sen bu yorumu görebilirsin."
+    rejected_comment_message: "Yazar bu yorumu onaylamadı!"
+  
+  article_comments_list:
+    title: "Yorumlar"
+    no_comments: "Yorum yok!"
+  
+  article_form:
+    title: "Başlık"
+    content: "İçerik"
+    status: "Durum"
+    draft: "Taslak"
+    published: "Yayında"
+    tags: "Etiketler"
+    new_tag_link: "Yeni etiket oluştur"
+    cancel: "İptal"
+  
+  create_article:
+    title: "Yeni Makale Oluştur"
+  
+  edit_article:
+    title: "Makeleyi Güncelle"
+  
+  article_notifications:
+    update: "Makale başarılı bir şekilde güncellendi."
+    create: "Makale başarılı bir şekilde oluşturuldu."
+    destroy: "Makale başarılı bir şekilde silindi."
+    destroy_failed: "Makele silinemedi! Lütfen tekrar deneyin."
+    publish: "Makale başarılı bir şekilde yayınlandı."
+    publish_failed: "Makele yayınlanamadı! Lütfen tekrar deneyin."
+    unpublish: "Makale başarılı bir şekilde yayından kaldırıldı."
+    unpublish_failed: "Makale yayından kaldırılamadı! Lütfen tekrar deneyin."
+    owner: "Bu makalenin sahibi değilsin. Bu makaleyi değişteremezsin!"
+    state: "Makaleyi silmeden ya da güncellemeden önce durumunu taslak yapmalısın!"
+
+  comment_notifications:
+    create: "Yorum başarılı bir şekilde oluşturuldu."
+    create_failed: "Yorum oluşturulamadı, lütfen tekrar deneyin!"
+    update: "Yorum başarılı bir şekilde güncellendi."
+    update_failed: "Yorum güncellenemedi, lütfen tekrar deneyin!"
+    destroy: "Yorum başarılı bir şekilde silindi."
+    destroy_failed: "Yorum silinemedi, lütfen tekrar deneyin!"
+    mark_as_approved: "Yorum başarılı bir şekilde onaylandı."
+    mark_as_approved_failed: "Yorum onaylanamadı, lütfen tekrar deneyin!"
+    mark_as_rejected: "Yorum başarılı bir şekilde reddedildi."
+    owner: "Bu yorumu sen yazmadığın için düzenleyip ya da silemezsin!"
+    belong_article: "Bu yorum senin makalelerinden birine ait olmadığı için bu yorumu onaylayıp ya da reddedemezsin."
+    not_pending_comment_manipulate: "Durumu beklemede olmayan bir yorum güncellenip ya da silinemez!"
+    not_pending_status_manipulate: "Durumu pending olmayan bir yourumun durumu değiştirilemez!"
+
+  user_show:
+    number_of_article: "Makalelerin Sayısı"
+    articles: "Makaleler"
+  
+  sidebar:
+    my_articles: "Makalelerim"
+    my_draft_articles: "Taslaklarım"
+    my_published_articles: "Yayınlarım"
+    my_comments: "Yorumlarım"
+    my_rejected_comments: "Reddedilen Yorumlarım"
+    my_pending_comments: "Onay Bekleyen Yorumlarım"
+    my_approved_comments: "Onaylanmış Yorumlarım"
+    comments_on_my_articles: "Makalelerime Yapılan Yorumlar"
+    rejected_comments_on_my_articles: "Reddedilen Yorumlar"
+    pending_comments_on_my_articles: "Onay Bekleyen Yorumlar"
+    approved_comments_on_my_articles: "Onaylanmış Yorumlar"
+    account: "Hesap"
+    edit_your_account: "Hesabını Güncelle"
+    sign_out: "Çıkış Yap"
+  
+  comment_edit:
+    title: "Yorumunu Güncelle"
+  
+  user_edit:
+    title: "Hesabını Guncelle"
+    password: "Şifre"
+    password_confirmation: "Şifre Onayı"
+    current_password: "Güncel Şifre"
+  
+  likes:
+    title: "Beğeniler"
+    no_likes: "Henüz Beğeni Yok"
+  
+  search:
+    no_articles: "Makale Yok"
+  
+  devise_links:
+    log_in: "Giriş Yap"
+    sign_up: "Üye Ol"
+    sign_in_with: "İle Giriş Yap"
+
+  no_articles:
+    message: "Hayır Olamaz!!! Hiç makale yok!"
+    new_article: "Yeni Makele Oluştur"

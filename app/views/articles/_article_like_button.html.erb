@@ -1,0 +1,9 @@
+<% if is_liked?(article,user) %>
+    <%= button_to dislike_article_path(article), :class => "btn btn-danger" do %>
+        <i class="bi bi-heart-fill"></i>
+    <% end %>
+<% else %>
+    <%= button_to like_article_path(article), :class => "btn btn-secondary" do %>
+        <i class="bi bi-heart-fill"></i>
+    <% end %>
+<% end %>

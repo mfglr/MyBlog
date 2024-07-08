@@ -1,0 +1,12 @@
+.comment-textarea{
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    resize: none;
+}
+.comment-send-button{
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+.sidebar-item{
+    margin-left: 20px;
+}

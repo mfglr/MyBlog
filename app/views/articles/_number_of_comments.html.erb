@@ -1,0 +1,6 @@
+<%= link_to article_path(article, anchor: "comments") do %>
+    <span>
+        <i class="bi bi-chat-fill"></i>
+        <%= get_number_of_approved_comments_or_current_users_pending_comments(article)%>
+    </span>
+<% end %>

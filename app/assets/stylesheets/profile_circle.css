@@ -1,0 +1,45 @@
+.circle1{
+    margin-right:0.25rem;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:1rem;
+    height:1rem;
+    font-size: 0.65rem;
+    border-radius:100%;
+    background-color: black;
+}
+.circle2{
+    margin-right:0.25rem;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size: 0.8rem;
+    width:2rem;
+    height:2rem;
+    border-radius:100%;
+    background-color: black;
+}
+.circle3{
+    margin-right:0.25rem;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:3rem;
+    height:3rem;
+    border-radius:100%;
+    background-color: black;
+}
+
+.nickname1{
+    color:black;
+    font-size: 0.65rem;
+}
+.nickname2{
+    color:black;
+    font-size: 0.8rem;
+}
+.nickname3{
+    color:black;
+    font-size: 1rem;
+}

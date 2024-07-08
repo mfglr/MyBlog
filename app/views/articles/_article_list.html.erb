@@ -1,0 +1,7 @@
+<div class="row">
+    <% articles.each do |article| %>
+        <div class="col-12 mb-4">
+            <%= render partial:"articles/article", locals: { article: article } %>
+        </div>
+    <% end %>
+</div>

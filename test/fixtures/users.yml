@@ -1,0 +1,9 @@
+mike:
+  id: 1
+  email: mike@outlook.com
+  nick_name: mike
+
+john:
+  id: 2
+  email: john@outlook.com
+  nick_name: john

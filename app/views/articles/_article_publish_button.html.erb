@@ -1,0 +1,9 @@
+<% if article.published %>
+    <%= button_to unpublish_article_path(article), :class => "btn btn-success" do %>
+        <i class="bi bi-bookmark-fill"></i>
+    <% end %>
+<% else %>
+    <%= button_to publish_article_path(article), :class => "btn btn-secondary" do %>
+        <i class="bi bi-bookmark-fill"></i>
+    <% end %>
+<% end %>

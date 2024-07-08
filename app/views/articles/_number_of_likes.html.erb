@@ -1,0 +1,6 @@
+<%= link_to likes_article_path(article) do %>
+    <span style="color:red;">
+        <i class="bi bi-heart-fill"></i>
+        <%= article.article_likes.count %>
+    </span>
+<% end %>

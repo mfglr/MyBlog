@@ -1,0 +1,84 @@
+<div class="row">
+    <div class="offset-md-3 col-md-6">
+        <div class="card mb-3">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <%= link_to "/#{@article.user.nick_name}" do %>
+                    <div class="d-flex align-items-center">
+                        <%= render partial:"shared/profile_circle", locals: { user: @article.user, circle: "circle3" }%>
+                        <span class="nickname3"><%= format_nick_name(@article.user) %></span>
+                    </div>
+                <% end %>
+                <small class="text-muted m-1">
+                    <%= render partial: "article_datetime", locals:{article: @article}%>
+                </small>
+            </div>
+
+            <img style="border-radius:0" class="card-img-top" src="https://static.vecteezy.com/system/resources/thumbnails/003/582/701/small_2x/coming-soon-background-illustration-template-design-free-vector.jpg" alt="Card image cap">
+            
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="card-title">
+                        <%= @article.title %>
+                    </h5>
+                    
+                    <p class="card-text d-flex align-items-center">
+                        <small class="text-muted m-1">
+                            <%= render partial: "number_of_likes", locals: { article: @article } %>
+                        </small>
+                        <small class="text-muted m-1">
+                            <%= render partial: "number_of_comments", locals: { article: @article } %>
+                        </small>
+                    </p>
+                </div>
+                
+                <p class="card-text">
+                    <%= article_content(@article) %>
+                </p>
+                
+                <div class="d-flex justify-content-between align-items-center">
+                    <% if user_signed_in? %>
+                        <%= render partial: "articles/article_like_button", locals:{article: @article,user: current_user} %>
+                        <% if @article.user == current_user%>
+                            <div class="d-flex">
+                                <div class="m-1">
+                                    <%= render partial: "article_publish_button",locals: { article: @article } %>
+                                </div>
+                                <% unless @article.published %>
+                                    <div class="m-1">
+                                        <%= link_to edit_article_path(@article), class: "btn btn-warning" do %>
+                                            <i class="bi bi-pencil-square"></i>
+                                        <% end %>
+                                    </div>
+                                    <div class="m-1">
+                                        <%= button_to @article, method: :delete, class: "btn btn-danger" do %>
+                                            <i class="bi bi-trash3-fill"></i>
+                                        <% end %>
+                                    </div>
+                                <% end %>
+                            </div>
+                        <% end %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+
+        <% if @article.tags.any? %>
+            <%= render partial: "tags/tag_list", locals: { tags: @article.tags } %>
+        <% end %>
+
+        <% if user_signed_in? %>
+            <div class="row mb-5">
+                <div class="offset-1 col-10">
+                    <%= render partial:"comments/form", locals: { article: @article, comment: Comment.new } %>
+                </div>
+            </div>
+        <% end %>
+        
+        <div id="comments">
+            <%= 
+                render partial: "comments/article_comments_list",
+                locals: { comments: get_approved_comments_or_current_users_pending_comments(@article) }
+            %>
+        </div>
+    </div>
+</div>

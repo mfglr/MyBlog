@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <%= render partial:"shared/sidebar"%>
+        </div>
+
+        <div class="col-6">
+            <div class=" d-flex justify-content-center">
+                <h1 class="text-center"><%= title %></h1>
+            </div>
+            <%= render partial: "articles/article_list", locals: { articles: @articles } %>
+        </div>
+    </div>
+</div>

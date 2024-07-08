@@ -1,0 +1,53 @@
+<div class="card">
+  <div class="card-header d-flex justify-content-between align-items-center <%= get_comment_header_color(comment)%>">
+    <%= link_to "/#{comment.user.nick_name}" do %>
+      <div class="d-flex align-items-center">
+        <%= render partial:"shared/profile_circle", locals: { user: comment.user, circle: "circle2" }%>
+        <span class="nickname2"><%= format_nick_name(comment.user)%></span>
+      </div>
+    <% end %>
+    <div style="font-weight:w100;font-size:0.9rem;">
+      <%= render partial: "comments/comment_datetime", locals:{ comment: comment } %>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <p class="card-text">
+      <%= comment.body %>
+    </p>
+
+    <% if comment.user == current_user && !comment.approved? %>
+      <div class="mb-2">
+        <span class="<%= comment.rejected? ? "text-danger" : "text-warning" %>">
+          <% if comment.pending? %>
+            <%= t("comment.pending_comment_message") %>
+          <% else %>
+            <%= t("comment.rejected_comment_message") %>
+          <% end %>
+        <span>
+      </div>
+    <% end %>
+    
+    <div class="d-flex">
+      <% if is_approvable?(comment) %>
+        <div class="d-flex me-1">
+          <%= render partial: "comments/comment_approve_button", locals: { comment: comment } %>
+        </div>
+      <% end %>
+
+      <% if is_manipulated?(comment)%>
+        <div class="me-1">
+          <%= link_to edit_article_comment_path(comment.article, comment), class: "btn btn-warning me-1" do %>
+            <i class="bi bi-pencil-square"></i>
+          <% end %>
+        </div>
+
+        <div class="me-1">
+          <%= button_to article_comment_path(comment.article, comment), method: :delete, class: "btn btn-danger" do %>
+            <i class="bi bi-trash3-fill"></i>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <div class="d-flex justify-content-center">
+                <h3><%= t("likes.title") %></h3>
+            </div>
+        </div>
+        <div class="offset-md-3 col-md-6">
+            <% if @article.users.any? %>
+                <%= render partial: "shared/user_items", locals: { users: @article.users } %>
+            <% else %>
+                <div class="d-flex justify-content-center">
+                    <h1> <%= t("likes.no_likes")%> </h1>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<%= form_with(model: article) do |form| %>
+    
+    <% if article&.errors&.any? %>
+        <ul class="list-group mb-3">
+            <% article.errors.each do |error| %>
+                <li class="list-group-item list-group-item-danger"><%= error.full_message %></li>
+            <% end %>
+        </ul>
+    <% end %>
+    <div class="form-group mb-3">
+        <%= form.label :title, value: t("article_form.title") %>
+        <%= form.text_field :title, class: "form-control" %>
+    </div>
+
+    <div class="form-group mb-3">
+        <%= form.label :content, value: t("article_form.content") %>
+        <%= form.rich_text_area :content,class: "form-control" %>
+    </div>
+
+    <div class="form-group mb-3">
+        <%= form.label :published, value: t("article_form.status") %>
+        <%= form.select :published, [[t("article_form.draft"), false], [t("article_form.published"), true]], {}, { :class => 'form-select' } %>
+    </div>
+
+    <div class="form-group mb-3">
+        <%= form.label :tag_ids, value: t("article_form.tags") %>
+        <%= 
+            form.select :tag_ids, 
+            Tag.pluck(:name,:id), 
+            {}, 
+            {multiple: true, data: { controller: "slim" } }
+        %>
+        <%= link_to t("article_form.new_tag_link"), new_tag_path, class:"form-text text-muted"%>
+    </div>
+
+    <div class="d-flex flex-row-reverse">
+        <div>
+            <%= link_to t("article_form.cancel"), :back, class: "btn btn-danger" %>
+            <%= form.submit class: "btn btn-primary" %>
+        </div>
+    </div>
+<% end %>

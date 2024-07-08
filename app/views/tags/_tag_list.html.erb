@@ -1,0 +1,11 @@
+<div class="d-flex card mb-5 p-1">
+    <div class="card-body">
+        <% tags.each do |tag| %>
+            <button class="btn btn-warning d-flex align-items-center m-1">
+                <%= link_to articles_tag_path(tag) do %>
+                    <i class="bi bi-tag"></i><%= tag.name %>
+                <% end %>
+            </button>
+        <% end %>
+    </div>
+</div>

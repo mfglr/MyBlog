@@ -1,0 +1,64 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
+        <div class="container">
+            
+            <%= link_to t("header.home"), "/", class: "navbar-brand" %>
+            
+            <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
+                <ul class="navbar-nav">
+                    <% if user_signed_in? %>
+                        <li class="nav-item">
+                            <%= link_to t("header.create_article"), new_article_path, class: "nav-link  #{'active' if request.path == new_article_path}" %>
+                        </li>
+                    <% end %>
+                </ul>
+
+                <div class="d-flex align-items-center">
+                   
+                    <%= form_with url: "/lanugage/change", method: :post, local: true do %>
+                        <%= 
+                            select_tag :locale, 
+                            options_for_select([['English', 'en'], ['Türkçe', 'tr']], I18n.locale), 
+                            onchange: 'this.form.submit();',
+                            class:"form-select form-select-sm"
+                        %>
+                    <% end %>
+                    
+                    <% if user_signed_in? %>
+                        <div class="d-flex align-items-center">
+                            <%= link_to "/#{current_user.nick_name}", class: "ms-2" do %>
+                                <%= render partial: "shared/profile_circle", locals: { user: current_user, circle: "circle3"} %>
+                            <% end %>
+                            <div class="d-flex flex-column">
+                                <%= link_to "/#{current_user.nick_name}" do %>
+                                    <span class="nickname3"><%= format_nick_name(current_user)%></span>
+                                <% end %>
+                                <div>
+                                    <i class="bi bi-door-open-fill"></i>
+                                    <%= link_to t("header.sign_out"), destroy_user_session_path, method: :delete,data: { turbo_method: :delete }, class: "link-dark rounded"%>
+                                </div>
+                            </div>
+                        </div>
+                    <% else %>
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <i class="bi bi-door-open-fill"></i>
+                            <%= 
+                                link_to t("header.sign_in"), 
+                                new_user_session_path,
+                                class: "link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover me-2 ms-2" 
+                            %>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <i class="bi bi-person-plus-fill"></i>
+                            <%= 
+                                link_to t("header.sign_up"),
+                                new_user_registration_path,
+                                class: "link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                            %>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

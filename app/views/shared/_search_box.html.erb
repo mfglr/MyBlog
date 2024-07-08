@@ -1,0 +1,13 @@
+<%= form_with url: search_articles_path, method: :get, local: true do |form| %>
+    <div class="form-check form-switch">
+        <%= form.check_box :just_tags, class: "form-check-input", value: params[:just_tags] %>
+        <label class="form-check-label">
+            <%= t("search_box.just_search_by_tags") %>
+        </label>
+    </div>
+    
+    <div class="input-group mb-3">
+        <%= form.text_field :keyword, class: "form-control", value: params[:keyword] %>
+        <%= form.submit t("search_box.search"), class: "btn btn-outline-secondary" %>
+    </div>
+<% end %>

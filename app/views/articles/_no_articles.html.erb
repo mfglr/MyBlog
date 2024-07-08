@@ -1,0 +1,6 @@
+<div class="d-flex flex-column align-items-center">
+    <h1 class="display-5 text-center"><%= t("no_articles.message")%></h1>
+    <% if current_user == user %>
+        <%= link_to t("no_articles.new_article"), new_article_path, class: "text-primary display-6" %>
+    <% end %>
+</div>

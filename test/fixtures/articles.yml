@@ -1,0 +1,40 @@
+draft_article:
+  id: 1
+  title: "A draft article"
+  content: "A draft article"
+  user_id: 1
+  published: false
+
+published_article:
+  id: 2
+  title: "A published article"
+  content: "A published article"
+  user_id: 1
+  published: true
+
+article:
+  id: 3
+  title: "An article"
+  content: "An article"
+  user_id: 1
+
+mikes_published_article:
+  id: 4
+  title: "This is Mike's published article"
+  content: "This is Mike's published article"
+  published: true
+  user_id: 1
+
+mikes_draft_article:
+  id: 5
+  title: "This is Mikes's draft article"
+  content: "This is Mike's draft article"
+  published: false
+  user_id: 1
+
+johns_article:
+  id: 6
+  title: "This is John's article"
+  content: "This is John's article"
+  published: false
+  user_id: 2

@@ -1,0 +1,125 @@
+en:
+  request_to_create_article: "Do you want to create a new article?"
+  
+  activerecord:
+    errors:
+      models:
+        article:
+          attributes:
+            title:
+              blank: "A title is required!"
+              too_long: "Title must be no more than 140 characters"
+
+  header:
+    home: "Home"
+    create_article: "Create Article"
+    sign_in: "Sign In"
+    sign_up: "Sign Up"
+    sign_out: "Sign Out"
+
+  search_box:
+    just_search_by_tags: "Just search by tags"
+    search: "Search"
+  
+  article:
+    empty_content: "Content will be here!"
+    
+  comment_form:
+    type_comment: "Type a comment"
+  
+  comment:
+    pending_comment_message: "The status of this comment is pending! Only you can see this comment below the article."
+    rejected_comment_message: "This comment is rejected by the auther!"
+  
+  article_comments_list:
+    title: "Comments"
+    no_comments: "No Comments!"
+  
+  article_form:
+    title: "Title"
+    content: "Content"
+    status: "Status"
+    draft: "Draft"
+    published: "Published"
+    tags: "Tags"
+    new_tag_link: "Create a new tag"
+    cancel: "Cancel"
+    create: "Create"
+  
+  create_article:
+    title: "Create A New Article"
+  
+  edit_article:
+    title: "Edit Your Article"
+  
+  article_notifications:
+    update: "The article has been succesfully updated."
+    create: "The article has been succesfully created."
+    destroy: "The article was succesfully deleted."
+    destroy_failed: "The article could not be deleted! Please try again."
+    publish: "The article has been succesfully published."
+    publish_failed: "The article could not be published! Please try again."
+    unpublish: "The article has been successfully unpublished."
+    unpublish_failed: "The article could not be unpublished! Please try again."
+    owner: "You can't manipulate this article! Because you are not the owner of this article."
+    state: "You must mark the article as draft to edit or remove it!"
+  
+  comment_notifications:
+    create: "The comment has been successfully created."
+    create_failed: "The comment could not be created.! Please try again."
+    update: "The comment has been successfull updated."
+    update_failed: "The comment could not be updated. Please try again."
+    destroy: "The comment has been successfull deleted."
+    destroy_failed: "The comment could not be deleted. Please try again."
+    mark_as_approved: "The comment has successfully marked as approved."
+    mark_as_approved_failed: "The comment could not be marked as  approved! Please try again."
+    mark_as_rejected: "The comment has successfully marked as rejected."
+    owner: "You can't update or remove this comment! You are not the owner of this comment!"
+    belong_article: "You can't change the status of this comment! This comment does not belong to any of your articles."
+    not_pending_comment_update: "An comment whose status is not pending can't be updated or removed!"
+    not_pending_status_manipulate: "The status of a comment rejected or approved can't be changed!"
+  
+  user_show:
+    number_of_article: "Number of Articles"
+    articles: "Articles"
+  
+  sidebar:
+    my_articles: "My Articles"
+    my_draft_articles: "My Draft Articles"
+    my_published_articles: "My Published Articles"
+    my_comments: "My Comments"
+    my_rejected_comments: "My Rejected Comments"
+    my_pending_comments: "My Pending Comments"
+    my_approved_comments: "My Approved Comments"
+    comments_on_my_articles: "Comments On My Articles"
+    rejected_comments_on_my_articles: "Rejected Comments On My Articles"
+    pending_comments_on_my_articles: "Pending Comments On My Articles"
+    approved_comments_on_my_articles: "Approved Comments On My Articles"
+    account: "Account"
+    edit_your_account: "Edit Your Account"
+    sign_out: "Sign Out"
+
+  comment_edit:
+    title: "Edit Your Comment"
+  
+  user_edit:
+    title: "Edit Your Account"
+    password: "password"
+    password_confirmation: "Password confirmation"
+    current_password: "Current Password"
+  
+  likes:
+    title: "Likes"
+    no_likes: "No Likes"
+  
+  search:
+    no_articles: "No Articles"
+
+  devise_links:
+    log_in: "Log In"
+    sign_up: "Sign Up"
+    sign_in_with: "Sign In With"
+  
+  no_articles:
+    message: "Oh No!!! No Articles!"
+    new_article: "Add New Article"

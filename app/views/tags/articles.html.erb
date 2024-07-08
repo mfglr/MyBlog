@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            <h1 class="text-">
+                <%= "##{@tag.name}" %>
+            </h1>
+        </div>
+        <div class="offset-md-2 col-md-8 offset-lg-3 col-lg-6">
+            <%= render partial: "/articles/article_list", locals: { articles: @articles }%>
+        </div>
+    </div>
+</div>

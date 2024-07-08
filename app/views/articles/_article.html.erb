@@ -1,0 +1,42 @@
+<div class="card">
+  <div class="card-header d-flex justify-content-between align-items-center <%= get_article_header_background_color(article) %>">
+    <%= link_to "/#{article.user.nick_name}" do %>
+      <div class="d-flex align-items-center">
+        <%= render partial:"shared/profile_circle", locals: { user: article.user, circle: "circle2" }%>
+        <span class="nickname2"><%= format_nick_name(article.user) %></span>
+      </div>
+    <% end %>
+    
+    <small class="text-muted">
+      <%= render partial: "articles/article_datetime", locals: { article: article } %>
+    </small>
+  </div>
+
+  <div class="card-body">
+    <div class="d-flex">
+      <h5 class="card-title">
+        <%= format_article_title(article) %>
+      </h5>
+    </div>
+
+    <p class="card-text">
+      <%= format_article_content(article) %>
+    </p>
+
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="card-text">
+        <small class="text-muted">
+          <%= render partial: "articles/number_of_likes", locals: { article: article } %>
+        </small>
+        <small class="text-muted">
+          <%= render partial: "articles/number_of_comments", locals: { article: article } %>
+        </small>
+      </div>
+
+      <%= link_to article, class: "btn btn-outline-primary" do %>
+        <i class="bi bi-arrow-right-circle"></i>
+      <% end %>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,12 @@
+<div class="card mb-3 p-2">
+  <div class="d-flex align-items-center">
+    <%= link_to "/#{user.nick_name}" do %>
+      <%= render partial: "shared/profile_circle", locals: { user: user, circle: "circle2" } %>
+    <% end %>
+    <%= link_to "/#{user.nick_name}" do %>
+      <span class="nickname2">
+        <%= format_nick_name(user)%>
+      </span>
+    <% end %>
+  </div>
+</div>
